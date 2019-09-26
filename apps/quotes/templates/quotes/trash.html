@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<head>
+    <title>Login or Register</title>
+</head>
+
+<body>
+
+    {%if messages%}
+    {%for message in messages%}
+    <h2>{{message}}</h2>
+    {%endfor%}
+    {%endif%}
+    <h3>Register</h3>
+    <div>
+        <form action="/register" method="POST">
+            <p>Name: <input type="text" name="name"> </p>
+            <p>Last Name: <input type="text" name="last_name"> </p>
+            <p>Email: <input type="email" name="email"> </p>
+            <p>Password: <input type="password" name="password"> </p>
+            <p>Password Confirmation: <input type="password" name="confirm"> </p>
+            {%csrf_token%}
+            <input type="submit" value="Register">
+        </form>
+    </div>
+    <h3>Login</h3>
+    <div>
+        <form action="/login" method="POST">
+            <p>Email: <input type="email" name="email"> </p>
+            <p>Password: <input type="password" name="password"> </p>
+            {%csrf_token%}
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+
+<form action="/register" method="POST">
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" name="name" placeholder="First name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="last_name" placeholder="Last name">
+        </div>
+    </div>
+</form>
+
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quotes</title>
+</head>
+
+<body>
+
+    <!-- <h3>Welcome, {{request.session.name}}!</h3>
+
+    <div>
+        <a href="/">Logout</a>
+    </div> -->
+
+    <!-- <div>
+        <a href="/quotes">Add a Quote</a>
+        <form action="add">
+            <p>Author: <input type="text" name="author"> </p>
+            <p>Quote:</p> <textarea rows="8" cols="60" name="quote"></textarea></p>
+        
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <h2>Quotes:</h2>
+    <div>
+        {%for quote in quotes%}
+        <p><a href="/quotes/{{ quote_id }}"> {{ quote.text }} </a></p>
+
+        <p><a href="/users/{{ user_id }}">{{ user.name }}</a> says: {{ quote.text }}</p>
+        <p>{{ quote.createdAt }}</p>
+        {%endfor%}
+
+    </div>
+    <form action="delet_comment" method="POST">
+        <input type="hidden" name="quote_id" value="">
+    </form> -->
+
+
+    <!-- <div class="reviews">
+        {%for review in otherReviews%}
+        <p><a href="/books/{{ review.book_id }}"> {{ review.book.title }} </a></p>
+        {%endfor%}
+    </div> -->
+
+    <!-- </body>
+
+</html> -->

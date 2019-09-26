@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Quotes</title>
+</head>
+
+<body>
+
+    <div>
+        <h5>{{ book.author.name }}</h5>
+        <h7>{{ quote.text }}</h7>
+    </div>
+
+    <h1>Quotes:</h1>
+
+    {%for quote in quotes %}
+    <p><a href="/quotes/{{ quote.quote_id }}"> {{ quote.quote.text }} </a></p>
+    <!-- <p>Rating:{{ review.rating }}/5 </p> -->
+
+    <p><a href="/users/{{ quote.user_id }}">{{ quote.user.name }}</a> says: {{ quote.text }}</p>
+    <p>{{ quote.createdAt }}</p>
+    {%endfor%}
+</body>
+
+</html>
